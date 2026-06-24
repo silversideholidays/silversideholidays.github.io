@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos Legais · Silverside Holidays</title>
+  <link rel="icon" href="Logo.jpg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #0284C7;
+      --primary-dark: #0369A1;
+      --accent:       #DC2626;
+      --text:         #0C1A2E;
+      --text-muted:   #5a6a7e;
+      --bg-alt:       #F0F9FF;
+      --border:       #CBD5E1;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      background: var(--primary-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar a.back {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.9;
+    }
+    .topbar a.back:hover { opacity: 1; text-decoration: underline; }
+    .topbar img { height: 36px; border-radius: 4px; }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .page-header .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      line-height: 1.2;
+    }
+    .page-header .meta {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Alert box ── */
+    .alert {
+      background: #FFF7ED;
+      border: 1px solid #FDBA74;
+      border-left: 4px solid #EA580C;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .toc h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .toc ol { padding-left: 1.25rem; }
+    .toc li { margin: 0.35rem 0; font-size: 0.9rem; }
+    .toc a { color: var(--primary); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Sections ── */
+    section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
+    section > h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin: 1.5rem 0 0.4rem;
+    }
+    section p { margin-bottom: 0.8rem; }
+    section ul, section ol { padding-left: 1.5rem; margin-bottom: 0.8rem; }
+    section li { margin: 0.35rem 0; }
+    .legal-ref {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Lang tabs ── */
+    .lang-tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .lang-tab {
+      background: #e2e8f0;
+      border: none;
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-tab.active { background: var(--primary); color: #fff; }
+    .lang-tab:hover:not(.active) { background: #cbd5e1; }
+
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+
+    /* ── Info box ── */
+    .info-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+    .info-box strong { color: var(--primary-dark); }
+
+    /* ── Links ── */
+    a { color: var(--primary); }
+    a:hover { color: var(--primary-dark); }
+
+    /* ── Footer ── */
+    .legal-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .legal-footer a { color: var(--text-muted); text-decoration: underline; }
+    .legal-footer .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 1.6rem; }
+      section > h2 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="index.html" class="back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Voltar ao Site · Back to Site · Volver al Sitio · 返回网站
+    </a>
+    <img src="Logo.jpg" alt="Silverside Holidays" />
+  </div>
+
+  <main class="page">
+
+    <header class="page-header">
+      <p class="eyebrow">Silverside Holidays · RNET n.º 8734 · Agro-Turismo</p>
+      <h1>Termos Legais &amp; Política de Privacidade</h1>
+      <p class="meta">
+        Última atualização · Last updated · Última actualización · 最后更新: 23 de junho de 2026 / 23 June 2026 / 23 de junio de 2026 / 2026年6月23日
+      </p>
+    </header>
+
+    <div class="alert">
+      Este documento cumpre os requisitos legais aplicáveis aos empreendimentos turísticos em Portugal, nos termos do Decreto-Lei n.º 39/2008, de 7 de março (regime jurídico da instalação e exploração dos empreendimentos turísticos), do Regulamento Geral sobre a Proteção de Dados (RGPD — Regulamento UE 2016/679) e da Lei n.º 58/2019, de 8 de agosto. · This document complies with Portuguese tourism law (Decree-Law 39/2008) and the GDPR (EU Regulation 2016/679).
+    </div>
+
+    <nav class="toc" aria-label="Índice">
+      <h2>Índice · Contents · Índice · 目录</h2>
+      <ol>
+        <li><a href="#privacidade">Política de Privacidade &amp; Cookies · Privacy &amp; Cookies Policy</a></li>
+        <li><a href="#termos">Termos e Condições Gerais · General Terms &amp; Conditions</a></li>
+        <li><a href="#reservas">Reservas e Pagamentos · Reservations &amp; Payments</a></li>
+        <li><a href="#cancelamentos">Cancelamentos · Cancellation Policy</a></li>
+        <li><a href="#checkin">Check-in / Check-out</a></li>
+        <li><a href="#responsabilidade">Responsabilidade · Liability</a></li>
+        <li><a href="#reclamacoes">Reclamações · Complaints</a></li>
+      </ol>
+    </nav>
+
+
+    <!-- ══════════════════════════════════════════
+         1. PRIVACY & COOKIES
+    ══════════════════════════════════════════ -->
+    <section id="privacidade">
+      <h2>1. Política de Privacidade &amp; Cookies · Privacy &amp; Cookies Policy</h2>
+
+      <div class="lang-tabs" data-section="priv">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <!-- PT -->
+      <div class="lang-block active" id="priv-pt">
+        <div class="info-box">
+          <strong>Responsável pelo Tratamento dos Dados:</strong><br>
+          Silverside Holidays · Rua Arrinhada 11, 2500-716 Serra do Bouro, Caldas da Rainha, Portugal<br>
+          E-mail: <a href="mailto:info@silverside.pt">info@silverside.pt</a> · Tel: <a href="tel:+351932119557">+351 932 119 557</a>
+        </div>
+        <p class="legal-ref">Base legal: RGPD (Regulamento UE 2016/679) · Lei n.º 58/2019, de 8 de agosto (Lei de Execução do RGPD em Portugal)</p>
+
+        <h3>1.1 Dados Recolhidos</h3>
+        <p>Recolhemos apenas os dados pessoais estritamente necessários para a prestação dos nossos serviços:</p>
+        <ul>
+          <li>Nome completo, nacionalidade e número de documento de identificação (exigência legal — artigo 16.º do Decreto-Lei n.º 39/2008)</li>
+          <li>Dados de contacto (e-mail, telefone)</li>
+          <li>Dados de reserva (datas, número de hóspedes, preferências especiais)</li>
+          <li>Dados de faturação, quando aplicável</li>
+          <li>Dados de navegação recolhidos através de cookies (ver secção 1.4)</li>
+        </ul>
+
+        <h3>1.2 Finalidade e Base Legal do Tratamento</h3>
+        <ul>
+          <li><strong>Execução contratual (art. 6.º, n.º 1, al. b) do RGPD)</strong> — processamento e gestão da reserva e estadia</li>
+          <li><strong>Obrigação legal (art. 6.º, n.º 1, al. c) do RGPD)</strong> — comunicação obrigatória de dados de hóspedes à AIMA (Agência para a Integração, Migrações e Asilo) ao abrigo do artigo 16.º do Decreto-Lei n.º 39/2008 e da Portaria n.º 1509/2008</li>
+          <li><strong>Interesse legítimo (art. 6.º, n.º 1, al. f) do RGPD)</strong> — melhoria dos serviços e comunicações relacionadas com a estadia</li>
+          <li><strong>Consentimento (art. 6.º, n.º 1, al. a) do RGPD)</strong> — comunicações de marketing, quando expressamente solicitado</li>
+        </ul>
+
+        <h3>1.3 Comunicação de Dados a Terceiros</h3>
+        <p>Os dados de identificação dos hóspedes são comunicados às autoridades competentes (AIMA) conforme imposto por lei. Não vendemos nem cedemos dados pessoais a terceiros para fins comerciais. Poderemos partilhar dados com prestadores de serviços tecnológicos (plataformas de reservas, processadores de pagamento) sob acordos de confidencialidade e proteção de dados.</p>
+
+        <h3>1.4 Conservação dos Dados</h3>
+        <p>Os dados são conservados pelo prazo mínimo exigido por lei: 10 anos para documentos fiscais (Código do IRC); 5 anos para registos de hóspedes. Dados de marketing são eliminados mediante pedido ou ao fim de 3 anos sem interação.</p>
+
+        <h3>1.5 Política de Cookies</h3>
+        <p>O nosso website utiliza:</p>
+        <ul>
+          <li><strong>Cookies técnicos essenciais</strong> — necessários ao funcionamento do site (ex.: preferência de idioma); não requerem consentimento</li>
+          <li><strong>Cookies de análise/desempenho</strong> — apenas com o seu consentimento expresso</li>
+        </ul>
+        <p>Pode gerir ou desativar os cookies nas definições do seu navegador. A desativação de cookies técnicos pode afetar o funcionamento do site.</p>
+
+        <h3>1.6 Direitos do Titular dos Dados</h3>
+        <p>Nos termos dos artigos 15.º a 22.º do RGPD, tem direito a:</p>
+        <ul>
+          <li>Aceder, retificar ou apagar os seus dados pessoais</li>
+          <li>Limitar ou opor-se ao tratamento</li>
+          <li>Portabilidade dos dados</li>
+          <li>Retirar o consentimento a qualquer momento, sem prejuízo da licitude do tratamento anterior</li>
+          <li>Não ficar sujeito a decisões totalmente automatizadas</li>
+        </ul>
+        <p>Para exercer os seus direitos, contacte-nos em <a href="mailto:info@silverside.pt">info@silverside.pt</a>. Respondemos no prazo de 30 dias. Tem também direito a apresentar reclamação à <a href="https://www.cnpd.pt" target="_blank" rel="noopener">Comissão Nacional de Proteção de Dados (CNPD)</a>.</p>
+      </div>
+
+      <!-- EN -->
+      <div class="lang-block" id="priv-en">
+        <div class="info-box">
+          <strong>Data Controller:</strong><br>
+          Silverside Holidays · Rua Arrinhada 11, 2500-716 Serra do Bouro, Caldas da Rainha, Portugal<br>
+          Email: <a href="mailto:info@silverside.pt">info@silverside.pt</a> · Tel: <a href="tel:+351932119557">+351 932 119 557</a>
+        </div>
+        <p class="legal-ref">Legal basis: GDPR (EU Regulation 2016/679) · Portuguese Law 58/2019 of 8 August</p>
+
+        <h3>1.1 Data Collected</h3>
+        <p>We only collect personal data strictly necessary for the provision of our services:</p>
+        <ul>
+          <li>Full name, nationality and identity document number (legal requirement — Article 16 of Decree-Law 39/2008)</li>
+          <li>Contact details (email, phone)</li>
+          <li>Reservation data (dates, number of guests, special preferences)</li>
+          <li>Billing information, where applicable</li>
+          <li>Browsing data collected via cookies (see section 1.4)</li>
+        </ul>
+
+        <h3>1.2 Purpose and Legal Basis for Processing</h3>
+        <ul>
+          <li><strong>Contractual performance (Art. 6(1)(b) GDPR)</strong> — processing and managing your reservation and stay</li>
+          <li><strong>Legal obligation (Art. 6(1)(c) GDPR)</strong> — mandatory reporting of guest data to AIMA (Portuguese Immigration and Integration Agency) under Article 16 of Decree-Law 39/2008</li>
+          <li><strong>Legitimate interest (Art. 6(1)(f) GDPR)</strong> — service improvement and stay-related communications</li>
+          <li><strong>Consent (Art. 6(1)(a) GDPR)</strong> — marketing communications, when expressly requested</li>
+        </ul>
+
+        <h3>1.3 Sharing of Data with Third Parties</h3>
+        <p>Guest identification data is reported to the competent authorities (AIMA) as required by law. We do not sell or share personal data with third parties for commercial purposes. We may share data with technology service providers (booking platforms, payment processors) under confidentiality and data protection agreements.</p>
+
+        <h3>1.4 Data Retention</h3>
+        <p>Data is retained for the minimum period required by law: 10 years for tax documents; 5 years for guest records. Marketing data is deleted upon request or after 3 years of inactivity.</p>
+
+        <h3>1.5 Cookie Policy</h3>
+        <p>Our website uses:</p>
+        <ul>
+          <li><strong>Essential technical cookies</strong> — necessary for site operation (e.g. language preference); no consent required</li>
+          <li><strong>Analytics/performance cookies</strong> — only with your express consent</li>
+        </ul>
+        <p>You may manage or disable cookies in your browser settings. Disabling technical cookies may affect site functionality.</p>
+
+        <h3>1.6 Data Subject Rights</h3>
+        <p>Under Articles 15–22 of the GDPR, you have the right to:</p>
+        <ul>
+          <li>Access, rectify, or erase your personal data</li>
+          <li>Restrict or object to processing</li>
+          <li>Data portability</li>
+          <li>Withdraw consent at any time, without affecting the lawfulness of prior processing</li>
+          <li>Not be subject to solely automated decisions</li>
+        </ul>
+        <p>To exercise your rights, contact us at <a href="mailto:info@silverside.pt">info@silverside.pt</a>. We respond within 30 days. You may also lodge a complaint with the <a href="https://www.cnpd.pt" target="_blank" rel="noopener">Comissão Nacional de Proteção de Dados (CNPD)</a>.</p>
+      </div>
+
+      <!-- ES -->
+      <div class="lang-block" id="priv-es">
+        <div class="info-box">
+          <strong>Responsable del Tratamiento de Datos:</strong><br>
+          Silverside Holidays · Rua Arrinhada 11, 2500-716 Serra do Bouro, Caldas da Rainha, Portugal<br>
+          Correo: <a href="mailto:info@silverside.pt">info@silverside.pt</a> · Tel: <a href="tel:+351932119557">+351 932 119 557</a>
+        </div>
+        <p class="legal-ref">Base legal: RGPD (Reglamento UE 2016/679) · Ley portuguesa n.º 58/2019, de 8 de agosto</p>
+
+        <h3>1.1 Datos Recopilados</h3>
+        <p>Solo recopilamos los datos personales estrictamente necesarios para la prestación de nuestros servicios:</p>
+        <ul>
+          <li>Nombre completo, nacionalidad y número de documento de identidad (exigencia legal — artículo 16 del Decreto-Ley 39/2008)</li>
+          <li>Datos de contacto (correo electrónico, teléfono)</li>
+          <li>Datos de reserva (fechas, número de huéspedes, preferencias especiales)</li>
+          <li>Información de facturación, cuando corresponda</li>
+          <li>Datos de navegación recopilados mediante cookies (véase sección 1.4)</li>
+        </ul>
+
+        <h3>1.2 Finalidad y Base Legal del Tratamiento</h3>
+        <ul>
+          <li><strong>Ejecución contractual (art. 6(1)(b) RGPD)</strong> — gestión de su reserva y estancia</li>
+          <li><strong>Obligación legal (art. 6(1)(c) RGPD)</strong> — comunicación obligatoria de datos de huéspedes a la AIMA conforme al Decreto-Ley 39/2008</li>
+          <li><strong>Interés legítimo (art. 6(1)(f) RGPD)</strong> — mejora de servicios y comunicaciones relacionadas con la estancia</li>
+          <li><strong>Consentimiento (art. 6(1)(a) RGPD)</strong> — comunicaciones de marketing, cuando se solicite expresamente</li>
+        </ul>
+
+        <h3>1.3 Comunicación de Datos a Terceros</h3>
+        <p>Los datos de identificación de los huéspedes se comunican a las autoridades competentes (AIMA) conforme a la ley. No vendemos ni cedemos datos personales a terceros con fines comerciales.</p>
+
+        <h3>1.4 Conservación de Datos</h3>
+        <p>Los datos se conservan durante el plazo mínimo exigido por la ley: 10 años para documentos fiscales; 5 años para registros de huéspedes. Los datos de marketing se eliminan previa solicitud o transcurridos 3 años sin interacción.</p>
+
+        <h3>1.5 Política de Cookies</h3>
+        <p>Nuestro sitio web utiliza:</p>
+        <ul>
+          <li><strong>Cookies técnicas esenciales</strong> — necesarias para el funcionamiento del sitio (p. ej., preferencia de idioma); no requieren consentimiento</li>
+          <li><strong>Cookies analíticas/de rendimiento</strong> — solo con su consentimiento expreso</li>
+        </ul>
+
+        <h3>1.6 Derechos del Titular de los Datos</h3>
+        <p>En virtud de los artículos 15 a 22 del RGPD, usted tiene derecho a acceder, rectificar o suprimir sus datos, a limitar u oponerse al tratamiento, a la portabilidad de los datos y a retirar el consentimiento en cualquier momento. Para ejercer sus derechos, contáctenos en <a href="mailto:info@silverside.pt">info@silverside.pt</a>. También puede reclamar ante la <a href="https://www.cnpd.pt" target="_blank" rel="noopener">CNPD</a>.</p>
+      </div>
+
+      <!-- ZH -->
+      <div class="lang-block" id="priv-zh">
+        <div class="info-box">
+          <strong>数据控制方：</strong><br>
+          银边旅馆（Silverside Holidays）· Rua Arrinhada 11, 2500-716 Serra do Bouro, Caldas da Rainha, 葡萄牙<br>
+          电子邮件：<a href="mailto:info@silverside.pt">info@silverside.pt</a> · 电话：<a href="tel:+351932119557">+351 932 119 557</a>
+        </div>
+        <p class="legal-ref">法律依据：欧盟《通用数据保护条例》（GDPR，EU 2016/679）· 葡萄牙第58/2019号法律</p>
+
+        <h3>1.1 收集的数据</h3>
+        <p>我们仅收集提供服务所必需的个人数据：</p>
+        <ul>
+          <li>全名、国籍及身份证件号码（法律要求——第39/2008号法令第16条）</li>
+          <li>联系方式（电子邮件、电话）</li>
+          <li>预订数据（日期、入住人数、特殊需求）</li>
+          <li>计费信息（如适用）</li>
+          <li>通过Cookie收集的浏览数据（见第1.4条）</li>
+        </ul>
+
+        <h3>1.2 处理目的与法律依据</h3>
+        <ul>
+          <li><strong>履行合同（GDPR第6(1)(b)条）</strong>——处理和管理您的预订及住宿</li>
+          <li><strong>法律义务（GDPR第6(1)(c)条）</strong>——依据第39/2008号法令第16条，将客人信息强制报告给葡萄牙移民局（AIMA）</li>
+          <li><strong>合法利益（GDPR第6(1)(f)条）</strong>——改善服务及入住相关沟通</li>
+          <li><strong>同意（GDPR第6(1)(a)条）</strong>——经您明确要求时发送营销通讯</li>
+        </ul>
+
+        <h3>1.3 向第三方共享数据</h3>
+        <p>客人身份数据将依法向主管当局（AIMA）报告。我们不出售或向第三方提供个人数据用于商业目的。</p>
+
+        <h3>1.4 数据保存期限</h3>
+        <p>数据保存期限不超过法律规定的最低期限：税务文件保存10年；住客记录保存5年。营销数据在收到申请或3年无互动后删除。</p>
+
+        <h3>1.5 Cookie政策</h3>
+        <p>本网站使用以下Cookie：</p>
+        <ul>
+          <li><strong>基本技术Cookie</strong>——网站运行所必需（如语言偏好），无需同意</li>
+          <li><strong>分析/性能Cookie</strong>——仅在您明确同意后使用</li>
+        </ul>
+
+        <h3>1.6 数据主体权利</h3>
+        <p>根据GDPR第15至22条，您有权访问、更正或删除您的个人数据、限制或反对处理、数据可携性，以及随时撤回同意。请发送电子邮件至 <a href="mailto:info@silverside.pt">info@silverside.pt</a> 行使您的权利。您也可以向 <a href="https://www.cnpd.pt" target="_blank" rel="noopener">葡萄牙国家数据保护委员会（CNPD）</a> 提出投诉。</p>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         2. GENERAL T&C
+    ══════════════════════════════════════════ -->
+    <section id="termos">
+      <h2>2. Termos e Condições Gerais · General Terms &amp; Conditions</h2>
+
+      <div class="lang-tabs" data-section="tc">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <div class="lang-block active" id="tc-pt">
+        <p class="legal-ref">Decreto-Lei n.º 39/2008, de 7 de março · Decreto-Lei n.º 228/2009, de 14 de setembro</p>
+        <p>Os presentes Termos e Condições regulam a relação contratual entre a <strong>Silverside Holidays</strong> ("Estabelecimento") e o hóspede ("Cliente"). Ao efetuar uma reserva, o Cliente declara ter lido e aceite integralmente estes Termos.</p>
+        <p>O Estabelecimento está registado no <strong>Registo Nacional dos Empreendimentos Turísticos (RNET) sob o n.º 8734</strong>, na categoria de Agro-Turismo, ao abrigo do Decreto-Lei n.º 39/2008, de 7 de março, e Portaria n.º 937/2008, de 20 de agosto.</p>
+        <p>É proibido fumar em todos os espaços interiores, nos termos da Lei n.º 37/2007, de 14 de agosto.</p>
+        <p>Animais de estimação só são admitidos com autorização prévia e sujeitos a suplemento. O Cliente é responsável por quaisquer danos causados pelo animal.</p>
+        <p>A capacidade máxima de cada alojamento não pode ser excedida em circunstância alguma.</p>
+      </div>
+
+      <div class="lang-block" id="tc-en">
+        <p class="legal-ref">Decree-Law 39/2008 of 7 March · Decree-Law 228/2009 of 14 September</p>
+        <p>These Terms and Conditions govern the contractual relationship between <strong>Silverside Holidays</strong> ("Establishment") and the guest ("Client"). By making a reservation, the Client confirms having read and fully accepted these Terms.</p>
+        <p>The Establishment is registered in the <strong>National Tourism Register (RNET) under n.º 8734</strong>, in the Agro-Tourism category, under Decree-Law 39/2008 of 7 March and Ordinance 937/2008 of 20 August.</p>
+        <p>Smoking is prohibited in all interior areas, under Law 37/2007 of 14 August.</p>
+        <p>Pets are admitted only with prior authorisation and subject to a surcharge. The Client is responsible for any damage caused by the animal.</p>
+        <p>The maximum occupancy of each accommodation unit may not be exceeded under any circumstances.</p>
+      </div>
+
+      <div class="lang-block" id="tc-es">
+        <p class="legal-ref">Decreto-Ley n.º 39/2008, de 7 de marzo · Decreto-Ley n.º 228/2009, de 14 de septiembre</p>
+        <p>Los presentes Términos y Condiciones regulan la relación contractual entre <strong>Silverside Holidays</strong> ("Establecimiento") y el huésped ("Cliente"). Al realizar una reserva, el Cliente declara haber leído y aceptado íntegramente estos Términos.</p>
+        <p>El Establecimiento está registrado en el <strong>Registro Nacional de Empresas Turísticas (RNET) con el n.º 8734</strong>, en la categoría de Agro-Turismo, conforme al Decreto-Ley 39/2008.</p>
+        <p>Está prohibido fumar en todos los espacios interiores conforme a la Ley n.º 37/2007.</p>
+        <p>Las mascotas solo se admiten con autorización previa y sujetas a suplemento. El Cliente es responsable de los daños que cause el animal.</p>
+        <p>La capacidad máxima de cada alojamiento no puede superarse en ningún caso.</p>
+      </div>
+
+      <div class="lang-block" id="tc-zh">
+        <p class="legal-ref">第39/2008号法令（2008年3月7日）· 第228/2009号法令（2009年9月14日）</p>
+        <p>本条款规范<strong>银边旅馆（Silverside Holidays）</strong>（"住宿设施"）与宾客（"客户"）之间的合同关系。完成预订即视为客户已阅读并完全接受本条款。</p>
+        <p>本住宿设施依据第39/2008号法令在<strong>葡萄牙全国旅游企业注册系统（RNET）注册编号8734</strong>，类别为乡村旅游（Agro-Turismo）。</p>
+        <p>根据第37/2007号法律，所有室内区域严禁吸烟。</p>
+        <p>携带宠物须事先获得许可并支付附加费。客户对宠物造成的任何损失承担责任。</p>
+        <p>任何情况下均不得超过每个住宿单元的最大入住人数。</p>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         3. RESERVATIONS & PAYMENTS
+    ══════════════════════════════════════════ -->
+    <section id="reservas">
+      <h2>3. Reservas e Pagamentos · Reservations &amp; Payments</h2>
+
+      <div class="lang-tabs" data-section="res">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <div class="lang-block active" id="res-pt">
+        <h3>Reservas</h3>
+        <ul>
+          <li>As reservas podem ser efectuadas através do motor de reservas online, por e-mail ou telefone.</li>
+          <li>A reserva fica confirmada após receção do depósito solicitado ou confirmação escrita do Estabelecimento.</li>
+          <li>O número de hóspedes indicado na reserva não pode ser excedido sem autorização prévia.</li>
+        </ul>
+        <h3>Pagamentos</h3>
+        <ul>
+          <li>Os preços incluem IVA à taxa legal em vigor (6% para alojamento, 13% para pequeno-almoço) e, quando indicado, pequeno-almoço.</li>
+          <li>O saldo remanescente liquida-se no check-in, salvo acordo diferente.</li>
+          <li>São aceites os principais cartões de crédito/débito e transferência bancária.</li>
+          <li>A taxa turística municipal, se aplicável, é cobrada separadamente no local, nos termos da legislação municipal vigente.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="res-en">
+        <h3>Reservations</h3>
+        <ul>
+          <li>Reservations may be made via the online booking engine, by email, or by telephone.</li>
+          <li>A reservation is confirmed upon receipt of the requested deposit or written confirmation from the Establishment.</li>
+          <li>The number of guests stated at booking may not be exceeded without prior authorisation.</li>
+        </ul>
+        <h3>Payments</h3>
+        <ul>
+          <li>Prices include VAT at the applicable legal rate (6% for accommodation, 13% for breakfast) and, where indicated, breakfast.</li>
+          <li>The remaining balance is due at check-in, unless otherwise agreed.</li>
+          <li>Major credit/debit cards and bank transfer are accepted.</li>
+          <li>A municipal tourist tax, where applicable, is charged separately on-site under current municipal legislation.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="res-es">
+        <h3>Reservas</h3>
+        <ul>
+          <li>Las reservas pueden realizarse a través del motor de reservas online, por correo electrónico o por teléfono.</li>
+          <li>La reserva se confirma tras la recepción del depósito solicitado o la confirmación escrita del Establecimiento.</li>
+          <li>El número de huéspedes indicado en la reserva no puede superarse sin autorización previa.</li>
+        </ul>
+        <h3>Pagos</h3>
+        <ul>
+          <li>Los precios incluyen IVA al tipo legal vigente (6% para alojamiento, 13% para desayuno) y, cuando se indique, desayuno.</li>
+          <li>El saldo restante se abona en el check-in, salvo acuerdo en contrario.</li>
+          <li>Se aceptan las principales tarjetas de crédito/débito y transferencia bancaria.</li>
+          <li>La tasa turística municipal, si procede, se cobra por separado en el establecimiento.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="res-zh">
+        <h3>预订</h3>
+        <ul>
+          <li>可通过在线预订系统、电子邮件或电话进行预订。</li>
+          <li>收到所需押金或住宿设施的书面确认后，预订即告确认。</li>
+          <li>未经事先授权，不得超过预订时注明的入住人数。</li>
+        </ul>
+        <h3>付款</h3>
+        <ul>
+          <li>价格含法定增值税（住宿6%，早餐13%），并在注明时包含早餐。</li>
+          <li>余款于入住时支付，另有协议者除外。</li>
+          <li>接受主要信用卡/借记卡及银行转账。</li>
+          <li>如适用，市政旅游税将在入住时另行收取。</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         4. CANCELLATIONS
+    ══════════════════════════════════════════ -->
+    <section id="cancelamentos">
+      <h2>4. Cancelamentos · Cancellation Policy</h2>
+
+      <div class="lang-tabs" data-section="can">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <div class="lang-block active" id="can-pt">
+        <ul>
+          <li><strong>Cancelamento gratuito:</strong> até 7 dias antes da data de chegada prevista.</li>
+          <li><strong>Cancelamento entre 3 e 7 dias antes da chegada:</strong> retenção de 50% do valor total da estadia.</li>
+          <li><strong>Cancelamento com menos de 3 dias antes da chegada / não comparência (no-show):</strong> retenção de 100% do valor total da estadia.</li>
+          <li>Os cancelamentos devem ser comunicados por escrito (e-mail) para <a href="mailto:info@silverside.pt">info@silverside.pt</a>. A data de receção do e-mail determina o prazo aplicável.</li>
+          <li>As condições específicas de cada tarifa (ex.: tarifas não reembolsáveis) prevalecem sobre a política geral acima.</li>
+          <li>Em caso de circunstâncias excecionais e imprevisíveis (força maior), o Estabelecimento analisará os casos individualmente.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="can-en">
+        <ul>
+          <li><strong>Free cancellation:</strong> up to 7 days before the scheduled arrival date.</li>
+          <li><strong>Cancellation between 3 and 7 days before arrival:</strong> 50% of the total stay value is retained.</li>
+          <li><strong>Cancellation within 3 days of arrival / no-show:</strong> 100% of the total stay value is retained.</li>
+          <li>Cancellations must be communicated in writing (email) to <a href="mailto:info@silverside.pt">info@silverside.pt</a>. The date the email is received determines the applicable period.</li>
+          <li>Specific rate conditions (e.g. non-refundable rates) take precedence over the general policy above.</li>
+          <li>In exceptional and unforeseeable circumstances (force majeure), the Establishment will assess each case individually.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="can-es">
+        <ul>
+          <li><strong>Cancelación gratuita:</strong> hasta 7 días antes de la fecha de llegada prevista.</li>
+          <li><strong>Cancelación entre 3 y 7 días antes de la llegada:</strong> retención del 50% del importe total de la estancia.</li>
+          <li><strong>Cancelación con menos de 3 días / no presentación (no-show):</strong> retención del 100% del importe total de la estancia.</li>
+          <li>Las cancelaciones deben comunicarse por escrito (correo electrónico) a <a href="mailto:info@silverside.pt">info@silverside.pt</a>. La fecha de recepción del correo determina el plazo aplicable.</li>
+          <li>Las condiciones específicas de cada tarifa (p. ej., tarifas no reembolsables) prevalecen sobre la política general.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="can-zh">
+        <ul>
+          <li><strong>免费取消：</strong>预计抵达日期7天前可免费取消。</li>
+          <li><strong>抵达前3至7天取消：</strong>扣留住宿总金额的50%。</li>
+          <li><strong>抵达前3天内取消 / 未到店（No-Show）：</strong>扣留住宿总金额的100%。</li>
+          <li>取消须以书面形式（电子邮件）发送至 <a href="mailto:info@silverside.pt">info@silverside.pt</a>。以收到电子邮件的日期为准。</li>
+          <li>特定房价条款（如不可退款房价）优先于上述通用政策。</li>
+          <li>在不可预见的特殊情况（不可抗力）下，住宿设施将逐案评估处理。</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         5. CHECK-IN / CHECK-OUT
+    ══════════════════════════════════════════ -->
+    <section id="checkin">
+      <h2>5. Check-in / Check-out</h2>
+
+      <div class="lang-tabs" data-section="ci">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <div class="lang-block active" id="ci-pt">
+        <ul>
+          <li><strong>Check-in:</strong> a partir das 15h00. Check-in antecipado sujeito a disponibilidade e possível suplemento.</li>
+          <li><strong>Check-out:</strong> até às 11h00. Check-out tardio sujeito a disponibilidade e possível suplemento.</li>
+          <li>Nos termos do artigo 16.º do Decreto-Lei n.º 39/2008 e da Portaria n.º 1509/2008, será solicitado documento de identificação válido (Bilhete de Identidade, Passaporte ou Cartão de Cidadão) de todos os hóspedes maiores de 16 anos, sendo os dados comunicados às autoridades competentes (AIMA).</li>
+          <li>O acesso/chave do alojamento deverá ser devolvido aquando do check-out. Em caso de extravio, poderão ser cobrados custos de substituição.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="ci-en">
+        <ul>
+          <li><strong>Check-in:</strong> from 15:00. Early check-in subject to availability and possible surcharge.</li>
+          <li><strong>Check-out:</strong> by 11:00. Late check-out subject to availability and possible surcharge.</li>
+          <li>Under Article 16 of Decree-Law 39/2008 and Ordinance 1509/2008, a valid identity document (ID card, Passport or Citizen Card) is required for all guests aged 16 and over. Data is reported to the competent authorities (AIMA).</li>
+          <li>Room key/access must be returned at check-out. Replacement costs may be charged in the event of loss.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="ci-es">
+        <ul>
+          <li><strong>Check-in:</strong> a partir de las 15:00. El check-in anticipado está sujeto a disponibilidad y posible suplemento.</li>
+          <li><strong>Check-out:</strong> hasta las 11:00. El check-out tardío está sujeto a disponibilidad y posible suplemento.</li>
+          <li>Conforme al artículo 16 del Decreto-Ley 39/2008, se solicitará documento de identidad válido a todos los huéspedes mayores de 16 años. Los datos serán comunicados a las autoridades competentes (AIMA).</li>
+          <li>La llave/acceso del alojamiento deberá devolverse en el check-out. En caso de pérdida, podrán cobrarse gastos de sustitución.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="ci-zh">
+        <ul>
+          <li><strong>入住：</strong>从15:00开始。提前入住视客房空置情况而定，可能收取额外费用。</li>
+          <li><strong>退房：</strong>11:00前。延迟退房视客房空置情况而定，可能收取额外费用。</li>
+          <li>根据第39/2008号法令第16条及第1509/2008号令，16岁及以上所有宾客须出示有效身份证件（身份证、护照或公民卡），相关数据将上报主管当局（AIMA）。</li>
+          <li>退房时须归还钥匙/门禁卡。如有丢失，可能收取补配费用。</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         6. LIABILITY
+    ══════════════════════════════════════════ -->
+    <section id="responsabilidade">
+      <h2>6. Responsabilidade · Liability</h2>
+
+      <div class="lang-tabs" data-section="lia">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <div class="lang-block active" id="lia-pt">
+        <ul>
+          <li>O Estabelecimento não se responsabiliza por perdas, furtos ou danos em bens pessoais dos hóspedes não depositados em cofre, salvo nos casos em que haja depósito formalizado.</li>
+          <li>Os hóspedes são responsáveis por quaisquer danos causados ao imóvel, mobiliário, equipamentos ou instalações, podendo ser cobrado o custo de reparação ou substituição.</li>
+          <li>O Estabelecimento reserva-se o direito de recusar ou fazer cessar a estadia em caso de comportamento inadequado, violação das regras da casa ou situações que ponham em risco a segurança de outros hóspedes ou do pessoal, sem direito a qualquer reembolso.</li>
+          <li>É interdita qualquer atividade ilegal nas instalações.</li>
+          <li>É proibido fumar em todos os espaços interiores (Lei n.º 37/2007). Em caso de violação, poderão ser cobradas taxas de limpeza especializadas.</li>
+          <li>O Estabelecimento dispõe de seguro de responsabilidade civil, nos termos da legislação aplicável aos empreendimentos turísticos.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="lia-en">
+        <ul>
+          <li>The Establishment is not liable for loss, theft, or damage to guests' personal property not stored in the safe, except where a formal deposit has been arranged.</li>
+          <li>Guests are responsible for any damage caused to the property, furniture, equipment, or facilities. Repair or replacement costs may be charged.</li>
+          <li>The Establishment reserves the right to refuse or terminate a stay in the event of inappropriate behaviour, breach of house rules, or conduct endangering the safety of other guests or staff, without entitlement to any refund.</li>
+          <li>Any illegal activity on the premises is strictly prohibited.</li>
+          <li>Smoking is prohibited in all interior areas (Law 37/2007). Specialised cleaning fees may be charged for violations.</li>
+          <li>The Establishment holds civil liability insurance as required by tourism legislation.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="lia-es">
+        <ul>
+          <li>El Establecimiento no se hace responsable de pérdidas, robos o daños en los bienes personales de los huéspedes no depositados en caja fuerte, salvo depósito formalizado.</li>
+          <li>Los huéspedes son responsables de los daños causados al inmueble, mobiliario, equipos o instalaciones. Podrán cobrarse los costes de reparación o sustitución.</li>
+          <li>El Establecimiento se reserva el derecho de rechazar o dar por terminada la estancia en caso de comportamiento inadecuado o situaciones que pongan en riesgo la seguridad, sin derecho a reembolso.</li>
+          <li>Queda prohibida cualquier actividad ilegal en las instalaciones.</li>
+          <li>Está prohibido fumar en todos los espacios interiores (Ley n.º 37/2007). Podrán cobrarse tasas de limpieza especializada en caso de incumplimiento.</li>
+        </ul>
+      </div>
+
+      <div class="lang-block" id="lia-zh">
+        <ul>
+          <li>住宿设施对未存入保险箱的宾客个人物品的丢失、被盗或损坏不承担责任，正式寄存的情况除外。</li>
+          <li>宾客对其对房产、家具、设备或设施造成的任何损坏承担责任，可能收取维修或更换费用。</li>
+          <li>如宾客行为不当、违反住宿规定或危及其他宾客或员工的安全，住宿设施保留拒绝接待或终止住宿的权利，且不予退款。</li>
+          <li>严禁在住宿设施内从事任何违法活动。</li>
+          <li>所有室内区域严禁吸烟（第37/2007号法律）。违规者可能被收取专业清洁费用。</li>
+          <li>住宿设施依据旅游业相关法规持有民事责任保险。</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         7. COMPLAINTS
+    ══════════════════════════════════════════ -->
+    <section id="reclamacoes">
+      <h2>7. Reclamações · Complaints</h2>
+
+      <div class="lang-tabs" data-section="rec">
+        <button class="lang-tab active" data-lang="pt">PT</button>
+        <button class="lang-tab" data-lang="en">EN</button>
+        <button class="lang-tab" data-lang="es">ES</button>
+        <button class="lang-tab" data-lang="zh">中文</button>
+      </div>
+
+      <div class="lang-block active" id="rec-pt">
+        <p class="legal-ref">Lei n.º 156/2005, de 15 de setembro (Livro de Reclamações) · Decreto-Lei n.º 74/2017, de 21 de junho</p>
+        <p>Nos termos da Lei n.º 156/2005, de 15 de setembro, alterada pelo Decreto-Lei n.º 74/2017, de 21 de junho, o Estabelecimento disponibiliza <strong>Livro de Reclamações</strong>:</p>
+        <ul>
+          <li><strong>Livro físico</strong> disponível na recepção, a pedido do hóspede</li>
+          <li><strong>Livro eletrónico:</strong> <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a></li>
+        </ul>
+        <p>Para resolução alternativa de litígios de consumo, o hóspede pode ainda recorrer:</p>
+        <ul>
+          <li>Ao <strong>Centro de Arbitragem de Conflitos de Consumo</strong> competente na sua área de residência</li>
+          <li>À plataforma europeia de resolução de litígios em linha (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></li>
+        </ul>
+        <p>As reclamações dirigidas diretamente ao Estabelecimento serão respondidas no prazo de 10 dias úteis.</p>
+        <p>A entidade de supervisão dos empreendimentos turísticos é o <strong>Turismo de Portugal, I.P.</strong>, <a href="https://www.turismodeportugal.pt" target="_blank" rel="noopener">www.turismodeportugal.pt</a>.</p>
+      </div>
+
+      <div class="lang-block" id="rec-en">
+        <p class="legal-ref">Law 156/2005 of 15 September (Complaints Book) · Decree-Law 74/2017 of 21 June</p>
+        <p>Under Law 156/2005 of 15 September (as amended by Decree-Law 74/2017 of 21 June), the Establishment provides a <strong>Complaints Book</strong>:</p>
+        <ul>
+          <li><strong>Physical book</strong> available at reception upon request</li>
+          <li><strong>Electronic book:</strong> <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a></li>
+        </ul>
+        <p>For alternative consumer dispute resolution, guests may also contact:</p>
+        <ul>
+          <li>The competent <strong>Consumer Dispute Arbitration Centre</strong> in your area of residence</li>
+          <li>The EU Online Dispute Resolution platform: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></li>
+        </ul>
+        <p>Complaints addressed directly to the Establishment will be answered within 10 business days.</p>
+        <p>The supervisory authority for tourism establishments is <strong>Turismo de Portugal, I.P.</strong>, <a href="https://www.turismodeportugal.pt" target="_blank" rel="noopener">www.turismodeportugal.pt</a>.</p>
+      </div>
+
+      <div class="lang-block" id="rec-es">
+        <p class="legal-ref">Ley n.º 156/2005, de 15 de septiembre · Decreto-Ley n.º 74/2017, de 21 de junio</p>
+        <p>Conforme a la Ley n.º 156/2005 (modificada por el Decreto-Ley n.º 74/2017), el Establecimiento pone a disposición un <strong>Libro de Reclamaciones</strong>:</p>
+        <ul>
+          <li><strong>Libro físico</strong> disponible en recepción a petición del huésped</li>
+          <li><strong>Libro electrónico:</strong> <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a></li>
+        </ul>
+        <p>Para la resolución alternativa de disputas de consumo, el huésped también puede recurrir a:</p>
+        <ul>
+          <li>El <strong>Centro de Arbitraje de Conflictos de Consumo</strong> competente en su área de residencia</li>
+          <li>La plataforma europea de resolución de litigios en línea (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></li>
+        </ul>
+        <p>Las reclamaciones dirigidas directamente al Establecimiento se responderán en un plazo de 10 días hábiles.</p>
+        <p>La entidad supervisora de los establecimientos turísticos es <strong>Turismo de Portugal, I.P.</strong></p>
+      </div>
+
+      <div class="lang-block" id="rec-zh">
+        <p class="legal-ref">第156/2005号法律（2005年9月15日）（投诉簿）· 第74/2017号法令（2017年6月21日）</p>
+        <p>根据第156/2005号法律（经第74/2017号法令修订），住宿设施提供<strong>投诉簿</strong>：</p>
+        <ul>
+          <li><strong>纸质投诉簿：</strong>可在前台索取</li>
+          <li><strong>电子投诉簿：</strong><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a></li>
+        </ul>
+        <p>如需替代性消费争议解决，宾客还可联系：</p>
+        <ul>
+          <li>您所在地区的<strong>消费者争议仲裁中心</strong></li>
+          <li>欧盟在线争议解决（ODR）平台：<a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></li>
+        </ul>
+        <p>直接向住宿设施提出的投诉将在10个工作日内答复。</p>
+        <p>葡萄牙旅游业的监管机构为<strong>葡萄牙旅游局（Turismo de Portugal, I.P.）</strong>，<a href="https://www.turismodeportugal.pt" target="_blank" rel="noopener">www.turismodeportugal.pt</a>。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="legal-footer">
+    <p>© 2026 Silverside Holidays · RNET n.º 8734 · Agro-Turismo · Rua Arrinhada 11, 2500-716 Serra do Bouro, Caldas da Rainha, Portugal</p>
+    <div class="footer-links">
+      <a href="index.html">Início · Home</a>
+      <a href="https://www.cnpd.pt" target="_blank" rel="noopener">CNPD</a>
+      <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+      <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">EU ODR</a>
+      <a href="https://www.turismodeportugal.pt" target="_blank" rel="noopener">Turismo de Portugal</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.lang-tabs').forEach(function(tabs) {
+      tabs.querySelectorAll('.lang-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var lang = btn.dataset.lang;
+          var sec = tabs.dataset.section;
+          // Update active tab
+          tabs.querySelectorAll('.lang-tab').forEach(function(t) {
+            t.classList.toggle('active', t === btn);
+          });
+          // Show correct block
+          document.querySelectorAll('[id^="' + sec + '-"]').forEach(function(block) {
+            block.classList.toggle('active', block.id === sec + '-' + lang);
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
