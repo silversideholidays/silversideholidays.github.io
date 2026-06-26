@@ -118,6 +118,7 @@ var translations = {
     "contact.licensed": "Licensed tourism accommodation",
     "contact.address": "Rua Arrinhada 11, Boavista · 2500-716 Serra do Bouro, Caldas da Rainha, Portugal",
     "contact.whatsapp": "WhatsApp / Phone",
+    "contact.mobile.note": "Call to national mobile network",
 
     "form.name": "Full name",
     "form.email": "Email",
@@ -130,7 +131,7 @@ var translations = {
     "form.message.placeholder": "Any special requests or questions…",
     "form.submit": "Send Enquiry",
     "form.success": "Thank you! We'll be in touch within 24 hours.",
-    "form.success.urgent": "For anything urgent, text or WhatsApp us: <a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557</a>",
+    "form.success.urgent": "For anything urgent, text or WhatsApp us: <a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557 (Call to national mobile network)</a>",
 
     "footer.tagline": "Silver Coast · Boavista, Portugal",
     "footer.nav": "Navigate",
@@ -260,6 +261,7 @@ var translations = {
     "contact.licensed": "Alojamento turístico licenciado",
     "contact.address": "Rua Arrinhada 11, Boavista · 2500-716 Serra do Bouro, Caldas da Rainha, Portugal",
     "contact.whatsapp": "WhatsApp / Telefone",
+    "contact.mobile.note": "Chamada para rede móvel nacional",
 
     "form.name": "Nome completo",
     "form.email": "E-mail",
@@ -272,7 +274,7 @@ var translations = {
     "form.message.placeholder": "Pedidos especiais ou questões…",
     "form.submit": "Enviar pedido",
     "form.success": "Obrigado! Entraremos em contacto dentro de 24 horas.",
-    "form.success.urgent": "Para qualquer urgência, envie-nos uma mensagem ou WhatsApp: <a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557</a>",
+    "form.success.urgent": "Para qualquer urgência, envie-nos uma mensagem ou WhatsApp: <a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557 (Chamada para rede móvel nacional)</a>",
 
     "footer.tagline": "Costa de Prata · Boavista, Portugal",
     "footer.nav": "Navegar",
@@ -402,6 +404,7 @@ var translations = {
     "contact.licensed": "Alojamiento turístico con licencia",
     "contact.address": "Rua Arrinhada 11, Boavista · 2500-716 Serra do Bouro, Caldas da Rainha, Portugal",
     "contact.whatsapp": "WhatsApp / Teléfono",
+    "contact.mobile.note": "Llamada a red móvil nacional",
 
     "form.name": "Nombre completo",
     "form.email": "Correo electrónico",
@@ -414,7 +417,7 @@ var translations = {
     "form.message.placeholder": "Solicitudes especiales o preguntas…",
     "form.submit": "Enviar consulta",
     "form.success": "¡Gracias! Nos pondremos en contacto en 24 horas.",
-    "form.success.urgent": "Para cualquier urgencia, escríbanos por mensaje o WhatsApp: <a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557</a>",
+    "form.success.urgent": "Para cualquier urgencia, escríbanos por mensaje o WhatsApp: <a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557 (Llamada a red móvil nacional)</a>",
 
     "footer.tagline": "Costa de Plata · Boavista, Portugal",
     "footer.nav": "Navegar",
@@ -544,6 +547,7 @@ var translations = {
     "contact.licensed": "持牌旅游住宿",
     "contact.address": "Rua Arrinhada 11, Boavista · 2500-716 Serra do Bouro, Caldas da Rainha，葡萄牙",
     "contact.whatsapp": "WhatsApp / 电话",
+    "contact.mobile.note": "拨打本地移动网络",
 
     "form.name": "全名",
     "form.email": "电子邮件",
@@ -556,7 +560,7 @@ var translations = {
     "form.message.placeholder": "特殊要求或问题…",
     "form.submit": "发送询价",
     "form.success": "感谢您！我们将在24小时内与您联系。",
-    "form.success.urgent": "如有紧急事项，请发送短信或WhatsApp联系我们：<a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557</a>",
+    "form.success.urgent": "如有紧急事项，请发送短信或WhatsApp联系我们：<a href=\"https://wa.me/351932119557\" target=\"_blank\" rel=\"noopener\">+351 932 119 557 (拨打本地移动网络)</a>",
 
     "footer.tagline": "银色海岸 · Boavista，葡萄牙",
     "footer.nav": "导航",
